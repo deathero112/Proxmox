@@ -20,10 +20,10 @@ EOF
 }
 header_info
 echo -e "Loading..."
-APP="Uptime Kuma"
+APP="Mediawiki"
 var_disk="4"
 var_cpu="1"
-var_ram="1024"
+var_ram="4096"
 var_os="debian"
 var_version="11"
 NSAPP=$(echo ${APP,,} | tr -d ' ')
@@ -434,7 +434,7 @@ bash -c "$(wget -qLO - https://raw.githubusercontent.com/tteck/Proxmox/main/ct/c
 msg_info "Starting LXC Container"
 pct start $CTID
 msg_ok "Started LXC Container"
-lxc-attach -n $CTID -- bash -c "$(wget -qLO - https://raw.githubusercontent.com/tteck/Proxmox/main/install/$var_install.sh)" || exit
+lxc-attach -n $CTID -- bash -c "$(wget -qLO - https://raw.githubusercontent.com/deathero112/Proxmox/main/install/$var_install.sh)" || exit
 IP=$(pct exec $CTID ip a s dev eth0 | awk '/inet / {print $2}' | cut -d/ -f1)
 pct set $CTID -description "# ${APP} LXC
 ### https://tteck.github.io/Proxmox/
