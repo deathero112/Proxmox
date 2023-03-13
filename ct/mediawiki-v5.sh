@@ -88,7 +88,7 @@ function default_settings() {
   echo -e "${DGN}Using Container Type: ${BGN}Unprivileged${CL} ${RD}NO DEVICE PASSTHROUGH${CL}"
   CT_TYPE="1"
   echo -e "${DGN}Using Root Password: ${BGN}Automatic Login${CL}"
-  PW="8xgUwK$k9EFt4"
+  PW=""
   echo -e "${DGN}Using Container ID: ${BGN}$NEXTID${CL}"
   CT_ID=$NEXTID
   echo -e "${DGN}Using Hostname: ${BGN}$NSAPP${CL}"
@@ -117,7 +117,7 @@ function default_settings() {
   MAC=""
   echo -e "${DGN}Using VLAN Tag: ${BGN}Default${CL}"
   VLAN=""
-  echo -e "${DGN}Enable Root SSH Access: ${BGN}Yes${CL}"
+  echo -e "${DGN}Enable Root SSH Access: ${BGN}No${CL}"
   SSH="yes"
   echo -e "${DGN}Enable Verbose Mode: ${BGN}No${CL}"
   VERB="no"
