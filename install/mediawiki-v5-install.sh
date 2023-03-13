@@ -94,7 +94,7 @@ $STD apt-get install -y git
 msg_ok "Installed Dependencies"
 
 msg_info "Installing Mediawiki"
-$STD bash <(curl -fsSL https://gist.githubusercontent.com/deathero112/2cee7a8fd79106125eb78d95179ba4fb/raw/392bfba42bc68b4ac96f45e6e8c0c6db6017ed84/install.sh)
+$STD bash <(curl -fsSL https://gist.githubusercontent.com/deathero112/2cee7a8fd79106125eb78d95179ba4fb/raw/c121aa78dc7ca3d793e0fd069d9eae8361b9e0b8/install.sh)
 msg_ok "Installed Mediawiki"
 
 echo "export TERM='xterm-256color'" >>/root/.bashrc
