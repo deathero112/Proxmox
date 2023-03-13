@@ -93,37 +93,9 @@ $STD apt-get install -y mc
 $STD apt-get install -y git
 msg_ok "Installed Dependencies"
 
-msg_info "Setting up Node.js Repository"
-$STD bash <(curl -fsSL https://deb.nodesource.com/setup_18.x)
-msg_ok "Set up Node.js Repository"
-
-msg_info "Installing Node.js"
-$STD sudo apt-get install -y nodejs
-msg_ok "Installed Node.js"
-
-msg_info "Installing Uptime Kuma"
-$STD git clone https://github.com/louislam/uptime-kuma.git
-mv uptime-kuma /opt/uptime-kuma
-cd /opt/uptime-kuma
-$STD npm run setup
-msg_ok "Installed Uptime Kuma"
-
-msg_info "Creating Service"
-service_path="/etc/systemd/system/uptime-kuma.service"
-echo "[Unit]
-Description=uptime-kuma
-
-[Service]
-Type=simple
-Restart=always
-User=root
-WorkingDirectory=/opt/uptime-kuma
-ExecStart=/usr/bin/npm start
-
-[Install]
-WantedBy=multi-user.target" >$service_path
-$STD systemctl enable --now uptime-kuma.service
-msg_ok "Created Service"
+msg_info "Installing Mediawiki"
+$STD bash <(curl -fsSL https://gist.githubusercontent.com/deathero112/2cee7a8fd79106125eb78d95179ba4fb/raw/392bfba42bc68b4ac96f45e6e8c0c6db6017ed84/install.sh
+msg_ok "Installed Mediawiki"
 
 echo "export TERM='xterm-256color'" >>/root/.bashrc
 echo -e "$APPLICATION LXC provided by https://tteck.github.io/Proxmox/\n" > /etc/motd
