@@ -90,11 +90,12 @@ $STD apt-get install -y curl
 $STD apt-get install -y sudo
 $STD apt-get install -y gnupg
 $STD apt-get install -y mc
-$STD bash <(curl -fsSL https://get.docker.com -o get-docker.sh)
+$STD bash -c "$(wget -qLO - https://get.docker.com -o get-docker.sh)"
+$STD bash get-docker.sh
 msg_ok "Installed Dependencies"
 
 msg_info "Installing Bookstack"
-$STD bash <(curl -fsSL https://gist.githubusercontent.com/deathero112/e171e65d5e9410faa1bd37736f2949b0/raw/1bcd8bdf309f934e9565618f7868ac830cd73325/bookstack.sh)
+$STD bash -c "$(wget -qLO - https://github.com/tteck/Proxmox/raw/main/ct/docker-v5.sh)"
 msg_ok "Installed audiobookshelf"
 
 echo "export TERM='xterm-256color'" >>/root/.bashrc
